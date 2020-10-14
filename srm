@@ -1,0 +1,8 @@
+#!/bin/bash
+
+fileName="${1##*/}"
+
+mkdir -p ~/RECYCLE
+gzip $1
+mv $1.gz ~/RECYCLE/$fileName.gz
+find ~/RECYCLE/ -mtime +7 -delete
